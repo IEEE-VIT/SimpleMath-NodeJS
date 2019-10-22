@@ -85,4 +85,49 @@ router.post("/ceil", (req, res) => {
   }
 });
 
+router.post("/sigmoid", (req,resp)=>{
+  try{
+    const {param1}=req.body;
+    const {param2}=req.body;
+    
+    let result=1/(1+Math.exp((-param1)*param2));
+
+    resp.json({
+      statusCode: 200,
+      result: result,
+      success: true
+    });
+  } catch(err) {
+    resp.json({
+      success: false,
+      statusCode: 400,
+      err: err.message
+    });
+  }
+});
+
+router.post("/arraySum", (req,resp)=>{
+  try{
+    const {param1}=req.body;
+    
+    var sum=0, i;
+
+    for(i=0;i<param1.length;i++){
+      sum+=param1[i];
+    }
+
+    resp.json({
+      statusCode: 200,
+      result: sum,
+      success: true
+    });
+  } catch(err) {
+    resp.json({
+      success: false,
+      statusCode: 400,
+      err: err.message
+    });
+  }
+});
+
 module.exports = router;
