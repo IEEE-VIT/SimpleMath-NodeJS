@@ -32,6 +32,8 @@ $ npm start
 $ npm run test
 ```
 
+> NOTE: If your system requires root priviliges, or any addition permissions, run the above commands as `sudo`
+
 ## Contributing
 To start contributing, check out [CONTRIBUTING.md](https://github.com/mayankshah1607/SimpleMath-NodeJS/blob/master/CONTRIBUTING.md). New contributors are always welcome to support this project. Check out issues labelled as `Hacktoberfest` if you are up for some grabs! :)
 
