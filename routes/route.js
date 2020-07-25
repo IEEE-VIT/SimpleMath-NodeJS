@@ -160,6 +160,30 @@ router.post("/areaOfRectangle", (req, res) => {
   }
 });
 
+router.post("/areaOfSquare", (req,res) => {
+  try{
+    const{ param1 } = req.body;
+    let result = Math.pow(parseFloat(param1, 10),2);
+
+    res.json({
+      result,
+      meta: {
+        success:true,
+        message: `Calculated area of Square with side ${param1}`,
+        code: 200
+      }
+    }) ;
+  }catch(err){
+    res.json({
+      meta:{
+      success: false,
+      message: err.message,
+      code: 400
+    }
+  });
+  }
+});
+
 
 
 module.exports = router;
